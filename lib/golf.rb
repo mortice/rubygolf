@@ -77,23 +77,23 @@ class Golf
 
 		def hole9 a
 			n = 0
-			firsts = Hash.new 0
-			seconds = Hash.new 0
-			thirds = Hash.new 0
+			z = Hash.new 0
+			y = z.dup
+			x = z.dup
 			File.open(a) do |f|
 				f.each_line do |v|
 					vote = v.split(",").map {|k| k.sub(/\s/, "").strip}
-					firsts[vote[0]] += 1
-					seconds[vote[1]] += 1 if vote.size > 1
-					thirds[vote[2]] += 1 if vote.size > 2
+					z[vote[0]] += 1
+					y[vote[1]] += 1 if vote.size > 1
+					x[vote[2]] += 1 if vote.size > 2
 					n += 1
 				end
 			end
-			top = firsts.sort {|a, b| a[1] <=> b[1]}.last
+			top = z.sort {|a, b| a[1] <=> b[1]}.last
 			if top[1] >= n / 2
 				top[0].strip
 			else
-				top = seconds.sort {|a, b| a[1] <=> b[1]}.first
+				top = y.sort {|a, b| a[1] <=> b[1]}.first
 				top[0].strip
 			end
 		end
