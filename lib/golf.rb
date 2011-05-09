@@ -81,7 +81,7 @@ class Golf
 			y = z.dup
 			x = z.dup
 			File.open(a) { |f|
-				f.each_line { |l|
+				f.each { |l|
 					v = l.split(",").map {|k| k.sub(/\s/, "").strip}
 					z[v[0]] += 1
 					y[v[1]] += 1 if v.size > 1
