@@ -33,7 +33,7 @@ class Golf
       a
     end
 
-		def hole5(a)
+		def hole5 a
 			f = []
 			0.upto(a.size-1) do |j|
 				a.each_with_index do |i, index|
@@ -43,11 +43,11 @@ class Golf
 			f
 		end
 
-		def hole9(a)
+		def hole9 a
 			count = 0
-			firsts = Hash.new(0)
-			seconds = Hash.new(0)
-			thirds = Hash.new(0)
+			firsts = Hash.new 0
+			seconds = Hash.new 0
+			thirds = Hash.new 0
 			File.open(a) do |f|
 				f.each_line do |v|
 					vote = v.split(",").map {|k| k.sub(/\s/, "").strip}
