@@ -10,7 +10,7 @@ class Golf
 
   def self.hole6 t
     a = []
-    (1..t).to_a.each do |i|
+    (1..t).each do |i|
       if i%3==0 && i%5==0
         a << 'fizzbuzz'
       elsif i%3==0
@@ -26,8 +26,8 @@ class Golf
 
   def self.hole8 t
     a = [1,1]
-    (1..t-2).each do |i|
-      a << (a[i] + a[i-1])
+    (t-2).times do |i|
+      a << (a[i+1] + a[i])
     end
     a
   end
