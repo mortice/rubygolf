@@ -23,15 +23,15 @@ class Golf
       }
     end
 
-		def hole5 a
-			f = []
-			0.upto(a.size-1) { |j|
-				a.each_with_index do |i, index|
-					f << a[index..index+j] unless index + j >= a.size
-				end
+    def hole5 a
+      f = []
+      0.upto(a.size-1) { |j|
+        a.each_with_index do |i, index|
+          f << a[index..index+j] unless index + j >= a.size
+        end
       }
-			f
-		end
+      f
+    end
 
     def hole6 t
       a = []
