@@ -5,7 +5,7 @@ class Golf
   end
 
   def self.hole3 n
-    eval (1..n).to_a.join('*')
+    eval (1..n).to_a.join '*'
   end
 
   def self.hole6 t
