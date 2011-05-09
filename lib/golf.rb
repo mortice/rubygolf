@@ -93,7 +93,7 @@ class Golf
 			if t[1] >= n / 2
 				t[0]
 			else
-				t = y.sort {|a, b| a[1] <=> b[1]}.first
+				t = y.map(&:first).sort
 				t[0]
 			end.strip
 		end
