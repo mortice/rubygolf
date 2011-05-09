@@ -89,12 +89,12 @@ class Golf
 					n += 1
 				end
 			end
-			top = z.sort {|a, b| a[1] <=> b[1]}.last
-			if top[1] >= n / 2
-				top[0].strip
+			t = z.sort {|a, b| a[1] <=> b[1]}.last
+			if t[1] >= n / 2
+				t[0].strip
 			else
-				top = y.sort {|a, b| a[1] <=> b[1]}.first
-				top[0].strip
+				t = y.sort {|a, b| a[1] <=> b[1]}.first
+				t[0].strip
 			end
 		end
 	end
