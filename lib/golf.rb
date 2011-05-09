@@ -81,8 +81,8 @@ class Golf
 			y = z.dup
 			x = z.dup
 			File.open(a) do |f|
-				f.each_line do |v|
-					vote = v.split(",").map {|k| k.sub(/\s/, "").strip}
+				f.each_line do |l|
+					vote = l.split(",").map {|k| k.sub(/\s/, "").strip}
 					z[vote[0]] += 1
 					y[vote[1]] += 1 if vote.size > 1
 					x[vote[2]] += 1 if vote.size > 2
