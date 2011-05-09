@@ -43,7 +43,7 @@ class Golf
 
     def hole6 t
       a = []
-      (1..t).each do |i|
+      (1..t).each { |i|
         if i%15 == 0
           a << 'fizzbuzz'
         elsif i%3==0
@@ -53,25 +53,25 @@ class Golf
         else
           a << i
         end
-      end
+      }
       a
     end
 
     def hole8 t
       a = [1,1]
-      (t-2).times do |i|
+      (t-2).times { |i|
         a << (a[i+1] + a[i])
-      end
+      }
       a
     end
 
 		def hole5 a
 			f = []
-			0.upto(a.size-1) do |j|
+			0.upto(a.size-1) { |j|
 				a.each_with_index do |i, index|
 					f << a[index..index+j] unless index + j >= a.size
 				end
-			end
+      }
 			f
 		end
 
@@ -80,15 +80,15 @@ class Golf
 			z = Hash.new 0
 			y = z.dup
 			x = z.dup
-			File.open(a) do |f|
-				f.each_line do |l|
+			File.open(a) { |f|
+				f.each_line { |l|
 					v = l.split(",").map {|k| k.sub(/\s/, "").strip}
 					z[v[0]] += 1
 					y[v[1]] += 1 if v.size > 1
 					x[v[2]] += 1 if v.size > 2
 					n += 1
-				end
-			end
+        }
+      }
 			t = z.sort {|a, b| a[1] <=> b[1]}.last
 			if t[1] >= n / 2
 				t[0].strip
