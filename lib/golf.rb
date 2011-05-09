@@ -44,7 +44,7 @@ class Golf
 		end
 
 		def hole9 a
-			count = 0
+			n = 0
 			firsts = Hash.new 0
 			seconds = Hash.new 0
 			thirds = Hash.new 0
@@ -54,11 +54,11 @@ class Golf
 					firsts[vote[0]] += 1
 					seconds[vote[1]] += 1 if vote.size > 1
 					thirds[vote[2]] += 1 if vote.size > 2
-					count += 1
+					n += 1
 				end
 			end
 			top = firsts.sort {|a, b| a[1] <=> b[1]}.last
-			if top[1] >= count / 2
+			if top[1] >= n / 2
 				top[0].strip
 			else
 				top = seconds.sort {|a, b| a[1] <=> b[1]}.first
