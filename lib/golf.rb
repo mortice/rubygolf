@@ -1,6 +1,38 @@
 class Golf
 
   class << self
+    def hole2 s
+      s.split.sort_by {|x| x[1]}.join(" ")
+    end
+
+    def hole4 a
+      a.map { |x|
+      x.
+      sub(/man\(.*\)/, 'hat(\0)').
+      sub(/dog\([^)]*/, '\0(bone)').
+      sub(/cat/, 'dead')
+      }
+    end
+
+    def hole7 a
+      s = a[0]
+      e = a[0]
+      o = []
+      a << $_
+      
+      a[1..-1].each { |x|
+      if x == e+1
+        e = x
+      else
+        o << (s != e ? "#{s}-#{e}" : "#{s}")
+        s = x
+        e = x
+      end
+      }
+      
+      o
+    end
+
     def hole1 a
       eval a.join '*'
     end
