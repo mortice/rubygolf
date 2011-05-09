@@ -11,7 +11,7 @@ class Golf
   def self.hole6 t
     a = []
     (1..t).each do |i|
-      if i%3==0 && i%5==0
+      if i%15 == 0
         a << 'fizzbuzz'
       elsif i%3==0
         a << 'fizz'
