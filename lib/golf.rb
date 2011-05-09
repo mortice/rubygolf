@@ -89,7 +89,7 @@ class Golf
 					n += 1
         }
       }
-			t = z.sort {|a, b| a[1] <=> b[1]}.last
+			t = z.sort_by {|a| a[1]}.last
 			if t[1] >= n / 2
 				t[0]
 			else
