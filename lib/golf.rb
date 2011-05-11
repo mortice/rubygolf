@@ -22,19 +22,17 @@ c = '
       }
       f
 
-      o = []
-      (1..a).each { |i|
+      (1..a).map { |i|
         if i%15 == 0
-          o << "fizzbuzz"
+          "fizzbuzz"
         elsif i%3==0
-          o << "fizz"
+          "fizz"
         elsif i%5==0
-          o << "buzz"
+          "buzz"
         else
-          o << i
+          i
         end
       }
-      o
 
       s = a[0]
       e = a[0]
