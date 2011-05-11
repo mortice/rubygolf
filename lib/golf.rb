@@ -23,15 +23,7 @@ c = '
       f
 
       (1..a).map { |i|
-        if i%15 == 0
-          "fizzbuzz"
-        elsif i%3==0
-          "fizz"
-        elsif i%5==0
-          "buzz"
-        else
-          i
-        end
+        i%15 == 0 ? "fizzbuzz" : i%3 == 0 ? "fizz" : i%5 == 0 ? "buzz" : i
       }
 
       s = a[0]
