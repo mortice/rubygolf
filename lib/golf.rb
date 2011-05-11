@@ -1,29 +1,18 @@
-class Golf
+c = '
 
-  class << self
+      eval a.join "*"
 
-    def hole1 a
-      eval a.join '*'
-    end
+      a.split.sort_by {|x| x[1]}.join(" ")
 
-    def hole2 s
-      s.split.sort_by {|x| x[1]}.join(" ")
-    end
+      eval (1..a).to_a.join "*"
 
-    def hole3 n
-      eval (1..n).to_a.join '*'
-    end
-
-    def hole4 a
       a.map { |x|
       x.
-      sub(/man\(.*\)/, 'hat(\0)').
-      sub(/dog\([^)]*/, '\0(bone)').
-      sub(/cat/, 'dead')
+      sub(/man\(.*\)/, "hat(\\\\0)").
+      sub(/dog\([^)]*/, "\\\\0(bone)").
+      sub(/cat/, "dead")
       }
-    end
 
-    def hole5 a
       f = []
       0.upto(a.size-1) { |j|
         a.each_with_index do |i, index|
@@ -31,30 +20,25 @@ class Golf
         end
       }
       f
-    end
 
-    def hole6 t
-      a = []
-      (1..t).each { |i|
+      o = []
+      (1..a).each { |i|
         if i%15 == 0
-          a << 'fizzbuzz'
+          o << "fizzbuzz"
         elsif i%3==0
-          a << 'fizz'
+          o << "fizz"
         elsif i%5==0
-          a << 'buzz'
+          o << "buzz"
         else
-          a << i
+          o << i
         end
       }
-      a
-    end
+      o
 
-    def hole7 a
       s = a[0]
       e = a[0]
       o = []
       a << $_
-
       a[1..-1].each { |x|
       if x == e+1
         e = x
@@ -64,19 +48,14 @@ class Golf
         e = x
       end
       }
-
       o
-    end
 
-    def hole8 t
-      a = [1,1]
-      (t-2).times { |i|
-        a << (a[i+1] + a[i])
+      o = [1,1]
+      (a-2).times { |i|
+        o << (o[i+1] + o[i])
       }
-      a
-    end
+      o
 
-    def hole9 a
       n = 0
       z = Hash.new 0
       y = z.dup
@@ -97,8 +76,15 @@ class Golf
         t = y.map(&:first).sort
         t[0]
       end.strip
-    end
+'.split "\n\n"
 
-  end
-
+class Golf
 end
+
+10.times { |i|
+  eval %{
+    def Golf.hole#{i} a
+      #{c[i]}
+    end
+  }
+}
