@@ -26,17 +26,14 @@ c = '
         i%15 == 0 ? "fizzbuzz" : i%3 == 0 ? "fizz" : i%5 == 0 ? "buzz" : i
       }
 
-      s = a[0]
-      e = a[0]
+      a << s = e = a.shift
       o = []
-      a << $_
-      a[1..-1].each { |x|
+      a.map { |x|
       if x == e+1
         e = x
       else
         o << (s != e ? "#{s}-#{e}" : "#{s}")
-        s = x
-        e = x
+        s = e = x
       end
       }
       o
