@@ -48,14 +48,12 @@ c = '
       z = Hash.new 0
       y = z.dup
       x = z.dup
-      File.open(a) { |f|
-        f.each { |l|
-          v = l.split(",").map &:strip
-          z[v[0]] += 1
-          y[v[1]] += 1 if v[1]
-          x[v[2]] += 1 if v[2]
-          n += 1
-        }
+      File.readlines(a).map { |l|
+        v = l.scan /\w+/
+        z[v[0]] += 1
+        y[v[1]] += 1 if v[1]
+        x[v[2]] += 1 if v[2]
+        n += 1
       }
       t = z.sort_by(&:last)[-1]
       (t[1] >= n/2 ? t : y.map(&:first).sort)[0].strip
