@@ -4,7 +4,7 @@ c = '
 
       a.split.sort_by {|x| x[1]}.join " "
 
-      eval (1..a).to_a.join "*"
+      hole1 2..a
 
       a.map { |x|
       x.
