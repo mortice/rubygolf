@@ -2,7 +2,7 @@ c = '
 
       eval a.join "*"
 
-      a.split.sort_by {|x| x[1]}.join(" ")
+      a.split.sort_by {|x| x[1]}.join " "
 
       eval (1..a).to_a.join "*"
 
@@ -10,7 +10,7 @@ c = '
       x.
       sub(/man\(.*\)/, "hat(\\\\0)").
       sub(/dog\([^)]*/, "\\\\0(bone)").
-      sub(/cat/, "dead")
+      sub /cat/, "dead"
       }
 
       f = []
