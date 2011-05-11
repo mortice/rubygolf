@@ -14,10 +14,11 @@ c = '
       }
 
       f = []
-      0.upto(a.size-1) { |j|
-        a.each_with_index do |i, index|
-          f << a[index..index+j] unless index + j >= a.size
-        end
+      s = a.size
+      s.times { |j|
+        s.times { |i|
+          f << a[i..i+j] if i+j < s
+        }
       }
       f
 
