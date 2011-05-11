@@ -8,8 +8,8 @@ c = '
 
       a.map { |x|
       x.
-      sub(/man\(.*\)/, "hat(\\\\0)").
-      sub(/dog\([^)]*/, "\\\\0(bone)").
+      sub(/man.*/, \'hat(\0)\').
+      sub(/dog.[^)]*/, \'\0(bone)\').
       sub /cat/, "dead"
       }
 
