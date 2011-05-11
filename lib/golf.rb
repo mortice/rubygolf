@@ -1,6 +1,6 @@
 c = '
 
-      eval a.join "*"
+      a.inject :*
 
       a.split.sort_by {|x| x[1]}.join " "
 
