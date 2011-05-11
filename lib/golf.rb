@@ -50,20 +50,15 @@ c = '
       x = z.dup
       File.open(a) { |f|
         f.each { |l|
-          v = l.split(",").map {|k| k.sub(/\s/, "").strip}
+          v = l.split(",").map &:strip
           z[v[0]] += 1
-          y[v[1]] += 1 if v.size > 1
-          x[v[2]] += 1 if v.size > 2
+          y[v[1]] += 1 if v[1]
+          x[v[2]] += 1 if v[2]
           n += 1
         }
       }
-      t = z.sort_by {|a| a[1]}.last
-      if t[1] >= n / 2
-        t[0]
-      else
-        t = y.map(&:first).sort
-        t[0]
-      end.strip
+      t = z.sort_by(&:last)[-1]
+      (t[1] >= n/2 ? t : y.map(&:first).sort)[0].strip
 '.split "\n\n"
 
 class Golf
