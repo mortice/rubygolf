@@ -1,8 +1,8 @@
-c = '
+z=Golf={}
+$i=0
+eval 'a.inject :*
 
-      a.inject :*
-
-      a.split.sort_by {|x| x[1]}.join " "
+      a.split.sort_by {|x| x[1]} * " "
 
       hole1 2..a
 
@@ -57,17 +57,7 @@ c = '
       }
       t = z.sort_by(&:last)[-1]
       (t[1] >= n/2 ? t : y.map(&:first).sort)[0].strip
-'.split "
+'.split("
 
-"
-
-class Golf
-end
-
-10.times { |i|
-  eval %{
-    def Golf.hole#{i} a
-      #{c[i]}
-    end
-  }
-}
+").map {|$k| $i += 1
+				"def z.hole#$i a; #$k;	end" } * "\n"
