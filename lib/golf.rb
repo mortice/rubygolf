@@ -1,4 +1,4 @@
-z=Golf={}
+z=Golf=Hash
 $i=0
 eval 'a.inject :*
 
@@ -45,7 +45,7 @@ eval 'a.inject :*
       o
 
       n = 0
-      z = Hash.new 0
+      z = new 0
       y = z.dup
       x = z.dup
       File.readlines(a).map { |l|
