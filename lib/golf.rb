@@ -57,7 +57,9 @@ c = '
       }
       t = z.sort_by(&:last)[-1]
       (t[1] >= n/2 ? t : y.map(&:first).sort)[0].strip
-'.split "\n\n"
+'.split "
+
+"
 
 class Golf
 end
